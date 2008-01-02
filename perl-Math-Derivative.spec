@@ -15,6 +15,7 @@ Source:         http://www.cpan.org/modules/by-module/Math/%{module}-%{version}.
 Buildrequires:  perl-devel
 %endif
 Buildarch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This Perl package exports functions for performing numerical first
