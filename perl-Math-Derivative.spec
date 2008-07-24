@@ -1,7 +1,7 @@
 %define module  Math-Derivative
 %define name    perl-%{module}
 %define version 0.01
-%define release %mkrel 7
+%define release %mkrel 9
 
 Name:           %{name}
 Version:        %{version}
