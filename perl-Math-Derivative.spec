@@ -1,21 +1,21 @@
-%define module  Math-Derivative
-%define name    perl-%{module}
-%define version 0.01
-%define release %mkrel 10
+%define upstream_name    Math-Derivative
+%define upstream_version 0.01
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Numeric 1st and 2nd order differentiation
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Math/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Numeric 1st and 2nd order differentiation
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Math/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 Buildrequires:  perl-devel
 %endif
 Buildarch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This Perl package exports functions for performing numerical first
@@ -26,7 +26,7 @@ Derivative2 may optionally be given values to use for the first dervivative at
 the start and end points of the data - otherwiswe 'natural' values are used.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -47,4 +47,3 @@ rm -rf %{buildroot}
 %doc README
 %{perl_vendorlib}/Math
 %{_mandir}/*/*
-
