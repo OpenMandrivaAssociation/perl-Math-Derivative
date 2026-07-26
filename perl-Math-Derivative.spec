@@ -1,15 +1,13 @@
 %define upstream_name    Math-Derivative
-%define upstream_version 1.01
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.01
+Release:	2
 
 Summary:	Numeric 1st and 2nd order differentiation
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Math-Derivative
-Source0:	https://cpan.metacpan.org/authors/id/J/JG/JGAMBLE/Math-Derivative-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/J/JG/JGAMBLE/Math-Derivative-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ Derivative2 may optionally be given values to use for the first dervivative at
 the start and end points of the data - otherwiswe 'natural' values are used.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -44,9 +42,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %changelog
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.10.0-1mdv2010.0
 + Revision: 403855
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-10mdv2009.0
+- rebuild using %1.01 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-10mdv2009.0
 + Revision: 257797
 - rebuild
 
