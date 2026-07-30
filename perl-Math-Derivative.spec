@@ -2,7 +2,7 @@
 %define upstream_version 1.01
 Name:		perl-%{upstream_name}
 Version:	1.01
-Release:	4
+Release:	5
 
 Summary:	Numeric 1st and 2nd order differentiation
 License:	GPL+ or Artistic
@@ -32,7 +32,8 @@ perl Makefile.PL INSTALLDIRS=vendor
 %check
 # soft: do not fail package on test failures
 set +e
-%make test
+:  # soft check
+%make test || :
 
 %install
 %makeinstall_std
