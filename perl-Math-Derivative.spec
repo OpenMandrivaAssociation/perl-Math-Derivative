@@ -2,7 +2,7 @@
 %define upstream_version 1.01
 Name:		perl-%{upstream_name}
 Version:	1.01
-Release:	2
+Release:	3
 
 Summary:	Numeric 1st and 2nd order differentiation
 License:	GPL+ or Artistic
